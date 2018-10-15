@@ -1,0 +1,91 @@
+* {
+		font-family: monospace;
+		font-size: 13px;
+		box-sizing : border-box;
+		text-decoration: none;
+		margin : 0;
+		padding : 0;
+		border : 0;
+		color : #000;
+}
+
+h1 {
+
+	float : left;
+}
+
+nav {
+
+		margin-left : 100px;
+}
+
+main {
+
+		clear : both;
+		overflow : hidden;
+}
+
+ul {
+
+	list-style-type : none;
+	float : right;
+}
+
+li {
+
+	display : inline-block;
+	margin-left : 30px;
+	margin-right : 30px;
+}
+
+p label {
+			display : inline-block;
+			text-align : right;
+			width : 120px;
+			margin-right : 40px;
+
+}
+
+textarea {
+			width : 100%;
+			margin : 10px auto;
+			height : 100px;
+			border : 3px double red;
+			border-radius : 12px;
+			padding : 10px;
+}
+
+.form p {
+
+			margin-bottom : 10px;
+}
+
+.form button {
+
+				float : right;
+				margin-right : 20px;
+				width : 150px;
+				border-radius : 16px;
+				border : 3px double red;
+				padding : 10px 5px;
+}
+
+input {
+
+		width : 200px;
+		border-radius : 8px;
+		border : 3px double red;
+		padding : 15px;
+
+}
+
+.form {
+
+		width : 50%;
+		height : 500px;
+		margin : 30px auto;
+		border-radius : 12px;
+		border : 3px double gray;
+		padding : 10px;
+
+}

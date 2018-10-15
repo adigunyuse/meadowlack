@@ -1,0 +1,5 @@
+#The following should not be added to the repository
+
+node_modules
+
+#And that's all
