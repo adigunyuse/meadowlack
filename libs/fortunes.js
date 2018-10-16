@@ -8,9 +8,9 @@
 																				];
 module.exports = {
 
-	fortune : function() {
+	fortun : function() {
 
-				var tune = Math.floor(Math.random * fortunes.length);
+				var tune = Math.floor(Math.random() * fortunes.length);
 
 					return fortunes[tune];
 	}

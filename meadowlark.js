@@ -2,17 +2,38 @@ var express = require('express');
 
 var app = express();
 
+var handlebars = require('express-handlebars').create({'defaultLayout' : 'main'});
+
 var fortune = require('./libs/fortunes');
 
+var aweather = require('./icontrollers/get-weather');
 
+app.engine('handlebars' , handlebars.engine);
 
 app.set('port' , process.env.PORT || 3000);
 
-app.set('view engine' , 'pug');
+app.set('view engine' , 'handlebars');
 
 app.set('views' , __dirname + '/views');
 
+app.disable('x-powered-by');
+
 app.use(express.static(__dirname + '/public'));
+
+app.use(function(req , res , next) {
+
+		res.locals.showTest = app.get('env') !== 'production' && req.query.test == 1;
+
+		if (res.locals.partials) {
+
+					res.locals.partials = {};
+
+				}
+
+					res.locals.partials = aweather;
+
+			next();
+});
 
 
 app.get('/' , function(req , res) {
@@ -22,9 +43,17 @@ app.get('/' , function(req , res) {
 
 app.get('/about' , function(req , res) {
 
-	var ranFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+				res.render('about', {'fortune' : fortune.fortun(),	'pageTestScript' : '/qa/tests-about.js' } );
+});
 
-				res.render('about' , {'fortune' : fortune.fortune()});
+app.get('/tours/hood-river', function(req, res){
+													
+					res.render('tours/hood-river');
+});
+
+app.get('/tours/request-group-rate', function(req, res){
+	
+					res.render('tours/request-group-rate');
 });
 
 app.use(function(req , res) {

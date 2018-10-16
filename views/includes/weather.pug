@@ -1,0 +1,18 @@
+
+.weatherWidget
+
+  for i in partials.locations
+
+    .location
+
+      h3 #{name}
+
+      a(href =i.forecastUrl)
+
+        img(src='' + i.iconUrl + '' , alt ='' + i.weather + '')
+
+        | #{i.weather} , #{i.temp}
+
+  small Source :
+
+    a(href ='http://www.wunderground.com') Weather Underground
